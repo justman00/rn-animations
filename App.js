@@ -17,10 +17,23 @@ function renderCard(item) {
   );
 }
 
+function renderNoMoreCards() {
+  return (
+    <Card title="All Done">
+      <Text style={{ marginBottom: 10 }}>No More content here</Text>
+      <Button title="Get More" backgroundColor="#03a9f4" />
+    </Card>
+  );
+}
+
 export default function App() {
   return (
     <View style={styles.container}>
-      <Deck renderCard={renderCard} data={DATA} />
+      <Deck
+        renderCard={renderCard}
+        data={DATA}
+        renderNoMoreCards={renderNoMoreCards}
+      />
     </View>
   );
 }
